@@ -5,16 +5,35 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        Employee obj = () -> "Software Engineer";
-        System.out.println(obj.getName());   
-        
-        Runnable rn = () -> {
-            for (int i=1; i<=10; i++) {
-                System.out.println("Hello " + i);
+        // Runnable rn = () -> {
+        //     for (int i=1; i<=10; i++) {
+        //         System.out.println("Hello " + i);
+        //     }
+        // };
+
+        // Thread thread = new Thread(rn);
+        // thread.run();
+
+        /*-----Understand the anonymous inner class-----*/
+        Employee employee = new Employee() {
+            @Override
+            public String getName() {
+                return "Shivam Javeri";
+            }
+
+            @Override
+            public String getDesignation() {
+                return "Software Engineer";
+            }
+
+            @Override
+            public String getSalary() {
+                return "$ 10000";
             }
         };
 
-        Thread thread = new Thread(rn);
-        thread.run();
+        System.out.println(employee.getName());
+        System.out.println(employee.getDesignation());
+        System.out.println(employee.getSalary());
     }
 }

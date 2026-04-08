@@ -4,4 +4,6 @@ package org.example;
 
 public interface Employee {
     String getName();
+    String getDesignation();
+    String getSalary();
 }
